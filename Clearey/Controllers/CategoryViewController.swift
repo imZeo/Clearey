@@ -51,9 +51,8 @@ class CategoryViewController: UITableViewController {
 		let destinationVC = segue.destination as! TodoViewController
 		
 		if let indexPath = tableView.indexPathForSelectedRow {
-			
 			destinationVC.selectedCategory = categories[indexPath.row]
-			
+	}
 	}
 	
 	//MARK: - Data Manipulation Methods
@@ -91,7 +90,6 @@ class CategoryViewController: UITableViewController {
 
 	//MARK: - Add New Categories
 	
-	
 	@IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
 		
 		var TextField = UITextField()
@@ -125,4 +123,4 @@ class CategoryViewController: UITableViewController {
 	
 	}
 
-}
+
