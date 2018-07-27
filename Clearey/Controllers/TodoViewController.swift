@@ -13,23 +13,16 @@ class TodoViewController: UITableViewController {
 	
 	var itemArray = [Item]()
 	
-	let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
+	var selectedCategory : Categs? {
+		didSet{
+			loadItems()
+		}
+	}
 	
 	let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
-		print(dataFilePath!)
-
-		
-		
-		loadItems()
-		
-//		if let items = defaults.array(forKey: "TodoListArray") as? [Item] {
-//			itemArray = items
-//		}
-
 
 	}
 	
@@ -48,9 +41,7 @@ class TodoViewController: UITableViewController {
 		let item = itemArray[indexPath.row]
 		
 		cell.textLabel?.text = item.title
-		
-		cell.accessoryType = item.done ? .checkmark : .none
-		
+
 		return cell
 	}
 	
@@ -58,7 +49,6 @@ class TodoViewController: UITableViewController {
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		
-		//print(itemArray[indexPath.row])
 		
 		itemArray[indexPath.row].done = !itemArray[indexPath.row].done
 		
