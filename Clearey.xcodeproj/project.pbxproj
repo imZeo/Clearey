@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A14905D820C16328001BA28E /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A14905D620C16328001BA28E /* DataModel.xcdatamodeld */; };
+		A10F3CC6214841FE002D9723 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10F3CC5214841FE002D9723 /* Item.swift */; };
+		A10F3CC821484206002D9723 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10F3CC721484206002D9723 /* Category.swift */; };
 		A16211F620655033005C5789 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16211F520655033005C5789 /* AppDelegate.swift */; };
 		A16211F820655033005C5789 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16211F720655033005C5789 /* TodoViewController.swift */; };
 		A16211FB20655033005C5789 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A16211F920655033005C5789 /* Main.storyboard */; };
@@ -21,7 +22,8 @@
 		00D5141BC315BA0E0788B3B1 /* Pods-Clearey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clearey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clearey/Pods-Clearey.debug.xcconfig"; sourceTree = "<group>"; };
 		1C78817ABC15E4A88C48041C /* Pods_Clearey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clearey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F04D86D64C0C437F43C493C /* Pods-Clearey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clearey.release.xcconfig"; path = "Pods/Target Support Files/Pods-Clearey/Pods-Clearey.release.xcconfig"; sourceTree = "<group>"; };
-		A14905D720C16328001BA28E /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		A10F3CC5214841FE002D9723 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		A10F3CC721484206002D9723 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		A16211F220655033005C5789 /* Clearey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clearey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A16211F520655033005C5789 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A16211F720655033005C5789 /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; usesTabs = 1; wrapsLines = 1; };
@@ -95,7 +97,8 @@
 		A1C0DF1420AF6ACC00AFD57F /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				A14905D620C16328001BA28E /* DataModel.xcdatamodeld */,
+				A10F3CC721484206002D9723 /* Category.swift */,
+				A10F3CC5214841FE002D9723 /* Item.swift */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 				TargetAttributes = {
 					A16211F120655033005C5789 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -201,15 +205,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Clearey-checkManifestLockResult.txt",
 			);
@@ -223,16 +223,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Clearey/Pods-Clearey-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
@@ -249,10 +245,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A10F3CC6214841FE002D9723 /* Item.swift in Sources */,
 				A1E7895920E52F3D009146CC /* CategoryViewController.swift in Sources */,
 				A16211F820655033005C5789 /* TodoViewController.swift in Sources */,
-				A14905D820C16328001BA28E /* DataModel.xcdatamodeld in Sources */,
 				A16211F620655033005C5789 /* AppDelegate.swift in Sources */,
+				A10F3CC821484206002D9723 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,7 +397,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iamzeo.Clearey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -416,7 +413,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iamzeo.Clearey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -443,19 +440,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		A14905D620C16328001BA28E /* DataModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				A14905D720C16328001BA28E /* DataModel.xcdatamodel */,
-			);
-			currentVersion = A14905D720C16328001BA28E /* DataModel.xcdatamodel */;
-			path = DataModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = A16211EA20655032005C5789 /* Project object */;
 }
