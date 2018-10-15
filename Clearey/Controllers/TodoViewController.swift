@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class TodoViewController: UITableViewController {
+class TodoViewController: SwipeTableViewController {
 	
 	var todoItems: Results<Item>?
 	let realm = try! Realm()
@@ -23,6 +23,7 @@ class TodoViewController: UITableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+
 	}
 	
 	//MARK: - TableView Datasource Method
@@ -35,7 +36,9 @@ class TodoViewController: UITableViewController {
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
-		let cell = tableView.dequeueReusableCell(withIdentifier: "TodoItemCell", for: indexPath)
+		let cell = super.tableView(tableView, cellForRowAt: indexPath)
+		
+//		let cell = tableView.dequeueReusableCell(withIdentifier: "TodoItemCell", for: indexPath)
 		
 		if let item = todoItems?[indexPath.row] {
 
@@ -119,7 +122,22 @@ class TodoViewController: UITableViewController {
 		tableView.reloadData()
 
 	}
+	
+	//MARK: - Delete Items
+
+	override func updateModel(at indexPath: IndexPath) {
+		if let itemForDeletion = self.todoItems?[indexPath.row] {
+			do {
+				try self.realm.write {
+					self.realm.delete(itemForDeletion)
+				}
+			} catch {
+				print("error deleting category, \(error)")
+			}
+		}
+	}
 }
+
 
 //MARK: - Search Bar Methods
 
